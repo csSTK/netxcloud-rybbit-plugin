@@ -1,0 +1,11 @@
+{
+    "name": "paul/rybbit-tracking",
+    "description": "Adds Rybbit tracking to Nextcloud",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "OCA\\RybbitTracking\\": "lib/"
+        }
+    }
+}

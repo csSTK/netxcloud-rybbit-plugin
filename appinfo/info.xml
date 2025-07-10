@@ -11,4 +11,8 @@
   <dependencies>
     <nextcloud min-version="25" />
   </dependencies>
+
+  <settings>
+    <admin>OCA\RybbitTracking\Settings\Admin</admin>
+  </settings>
 </info>

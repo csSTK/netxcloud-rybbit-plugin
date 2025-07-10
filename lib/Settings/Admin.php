@@ -27,7 +27,7 @@ class Admin implements ISettings {
     }
 
     public function getSection() {
-        return 'rybbit_tracking';
+        return 'additional';
     }
 
     public function getPriority() {

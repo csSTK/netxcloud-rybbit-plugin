@@ -5,11 +5,10 @@ namespace OCA\RybbitTracking\Controller;
 use OCP\IRequest;
 use OCP\IConfig;
 use OCP\AppFramework\Controller;
-use OCP\AppFramework\Http\RedirectResponse;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IUserSession;
 
-class ConfigController extends Controller {
+class SettingsController extends Controller {
 
     private $config;
     private $userSession;
@@ -37,26 +36,5 @@ class ConfigController extends Controller {
         $this->config->setAppValue('rybbit_tracking', 'vitals', $vitals);
 
         return new JSONResponse(['status' => 'success']);
-    }
-
-    /**
-     * @NoCSRFRequired
-     * @PublicPage
-     * @NoAdminRequired
-     */
-    public function config() {
-        $url = $this->config->getAppValue('rybbit_tracking', 'url', '');
-        $site_id = $this->config->getAppValue('rybbit_tracking', 'site_id', '');
-        $replay = $this->config->getAppValue('rybbit_tracking', 'replay', 'false');
-        $errors = $this->config->getAppValue('rybbit_tracking', 'errors', 'false');
-        $vitals = $this->config->getAppValue('rybbit_tracking', 'vitals', 'false');
-
-        return new JSONResponse([
-            'url' => $url,
-            'site_id' => $site_id,
-            'replay' => $replay === 'true',
-            'errors' => $errors === 'true',
-            'vitals' => $vitals === 'true'
-        ]);
     }
 }

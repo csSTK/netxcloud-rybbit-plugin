@@ -1,5 +1,5 @@
 <?php
 
-use OCP\Util;
+use OCA\RybbitTracking\AppInfo\Application;
 
-Util::addScript('rybbit_tracking', 'rybbit');
+new Application();
