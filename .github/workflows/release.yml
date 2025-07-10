@@ -31,13 +31,10 @@ jobs:
           ./build-release.sh
 
       - name: Create Release
-        uses: actions/create-release@v1
-        id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.version.outputs.version }}
-          release_name: Rybbit Tracking Plugin v${{ steps.version.outputs.version }}
+          name: Rybbit Tracking Plugin v${{ steps.version.outputs.version }}
           body: |
             ## Rybbit Tracking Plugin v${{ steps.version.outputs.version }}
 
@@ -49,15 +46,8 @@ jobs:
             ### Changes
             See CHANGELOG.md for details.
 
+          files: ./releases/rybbit-${{ steps.version.outputs.version }}.tar.gz
           draft: false
           prerelease: false
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./releases/rybbit-${{ steps.version.outputs.version }}.tar.gz
-          asset_name: rybbit-${{ steps.version.outputs.version }}.tar.gz
-          asset_content_type: application/gzip
