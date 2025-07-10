@@ -16,6 +16,22 @@ This plugin allows administrators to configure Rybbit tracking parameters and au
 
 ## Installation
 
+### From GitHub Releases (Recommended)
+
+1. Go to the [Releases page](https://github.com/yourusername/nextcloud-rybbit-plugin/releases)
+2. Download the latest `rybbit-x.x.x.tar.gz` file
+3. Extract to your Nextcloud `apps/` directory:
+   ```bash
+   cd /path/to/nextcloud/apps/
+   tar -xzf rybbit-x.x.x.tar.gz
+   ```
+4. Set proper permissions:
+   ```bash
+   sudo chown -R www-data:www-data /path/to/nextcloud/apps/rybbit
+   sudo chmod -R 755 /path/to/nextcloud/apps/rybbit
+   ```
+5. Enable the plugin in Nextcloud admin settings under "Apps"
+
 ### Manual Installation
 
 1. Download or clone this repository
@@ -68,6 +84,16 @@ Response format:
 ```
 
 ## Development
+
+### Building Releases
+
+Use the included build script to create release archives:
+
+```bash
+./build-release.sh
+```
+
+This will create a `releases/rybbit-x.x.x.tar.gz` file ready for distribution.
 
 ### Local Development with Docker
 
