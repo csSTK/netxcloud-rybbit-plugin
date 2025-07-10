@@ -12,7 +12,7 @@ This plugin allows administrators to configure Rybbit tracking parameters and au
 - Automatic injection of Rybbit tracking script
 - API endpoint for retrieving tracking configuration
 - Debug mode for troubleshooting
-- Compatible with Nextcloud 25+ 
+- Compatible with Nextcloud 25+
 
 ## Installation
 
@@ -75,6 +75,7 @@ GET /ocs/v2.php/apps/rybbit_tracking/api/config
 ```
 
 Response format:
+
 ```json
 {
   "rybbit_enabled": true,
@@ -135,8 +136,15 @@ rybbit_tracking/
 
 ## License
 
-[Add your license information here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Support
 
-[Add support information here]
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/yourusername/nextcloud-rybbit-plugin/issues) page on GitHub
+2. Create a new issue with detailed information about your problem
+3. Include relevant logs from your Nextcloud instance
+4. Mention your Nextcloud version and PHP version
+
+For development questions, see the Development section above.
