@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<info>
+  <id>rybbit_tracking</id>
+  <name>Rybbit Tracking</name>
+  <description>Adds Rybbit tracking to Nextcloud</description>
+  <version>1.0.0</version>
+  <licence>MIT</licence>
+  <author>Paul Otto Bethge</author>
+  <namespace>RybbitTracking</namespace>
+  <category>customization</category>
+  <dependencies>
+    <nextcloud min-version="25" />
+  </dependencies>
+</info>
